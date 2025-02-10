@@ -30,7 +30,7 @@ function setup() {
 function draw() {
     
     if (port.availableBytes() > 0) {
-        let dataRx = port.read(1); // Leer un byte de datos
+        let dataRx = port.read(1);
 
         
         if (dataRx == 'A') {
