@@ -1,4 +1,6 @@
-´´´mpy
+
+Este fue el codigo usado para microbit
+``` py
 from microbit import *
 
 uart.init(baudrate=115200)
@@ -9,12 +11,11 @@ while True:
     if button_b.is_pressed():
         uart.write('B')
         sleep(500)
-´´´
-Este fue el codigo usado para microbit
+```
 
 Este es el codigo de p5js:
 
-'''js
+``` js
 let port;
 let squareColor; 
 
@@ -51,4 +52,6 @@ function connectBtnClick() {
         port.close();
     }
 }
-´´´
+```
+
+El código de microbit manda una señal al presionar alguno de los 2 botones. Luego, por medio del código de p5.js se toma la señal y ejecuta la funcion de crear un cuadrado en pantalla y cambiarlo a un color aleatorio cada vez que se pulse cualquiera de los botones. Funciona similar al ejemplo visto en ejercicios anteriores pero sin el uso de la pantalla del microbit ni del sensor de movimiento, solo los botones.
