@@ -57,7 +57,7 @@ while True:
 
     sleep(100) 
 ```
-Por medio de este nuevo programa se pueden ver 3 diferentes semáforos funcionando a la vez con diferentes tiempos. Como todos los leds del dispositivo son rojos, se usa la posición como diferenciación de cada color. Cada semáforo funciona en una columna de leds diferente. 
+Por medio de este nuevo programa se pueden ver 3 diferentes semáforos funcionando a la vez con diferentes tiempos. Como todos los leds del dispositivo son rojos, se usa la posición e intensidad de luz como diferenciación de cada color. Cada semáforo funciona en una columna de leds diferente. 
 
 Usar una clase para representar cada semáforo permite organizar mejor el código, hacerlo más limpio y reutilizable. Cada instancia maneja su propio estado y tiempos sin interferir con las demás, lo que facilita la creación de múltiples semáforos concurrentes. Además, al usar una máquina de estados finita (FSM), se controla de forma precisa y ordenada el cambio entre luces (rojo, amarillo, verde), lo que simplifica el diseño y lo hace ideal para sistemas como el micro bit, donde se necesita eficiencia y claridad en la lógica.
 
