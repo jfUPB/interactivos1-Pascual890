@@ -1,34 +1,30 @@
 Codigo bomba en p5js
 
 ``` js
-let tiempo = 20;
 let estado = "inactiva";
-let inicio;
+let tiempo = 20;
+let tiempoRestante = 0;
+let tiempoInicio = 0;
+
+let secuencia = [];
+let secuenciaCorrecta = ['A', 'B', 'A', 'S'];
 
 function setup() {
-  createCanvas(400, 300);
+  createCanvas(400, 400);
   textAlign(CENTER, CENTER);
-  textSize(48);
+  textSize(32);
 
-  let btnIniciar = createButton("Activar bomba");
-  btnIniciar.position(150, 250);
-  btnIniciar.mousePressed(activarBomba);
+  let sumarBtn = createButton("+1s (A)");
+  sumarBtn.position(50, 360);
+  sumarBtn.mousePressed(() => manejarEvento('A'));
 
-  let btnSumar = createButton("+ tiempo");
-  btnSumar.position(50, 250);
-  btnSumar.mousePressed(() => {
-    if (estado === "inactiva") {
-      tiempo = min(tiempo + 1, 60);
-    }
-  });
+  let restarBtn = createButton("-1s (B)");
+  restarBtn.position(150, 360);
+  restarBtn.mousePressed(() => manejarEvento('B'));
 
-  let btnRestar = createButton("- tiempo");
-  btnRestar.position(280, 250);
-  btnRestar.mousePressed(() => {
-    if (estado === "inactiva") {
-      tiempo = max(tiempo - 1, 10);
-    }
-  });
+  let activarBtn = createButton("Activar (S)");
+  activarBtn.position(250, 360);
+  activarBtn.mousePressed(() => manejarEvento('S'));
 }
 
 function draw() {
@@ -36,53 +32,54 @@ function draw() {
   dibujarBomba();
 
   if (estado === "activa") {
-    let tiempoPasado = int((millis() - inicio) / 1000);
-    let restante = max(0, tiempo - tiempoPasado);
-    mostrarTiempo(restante);
-
-    if (restante === 0 && estado !== "explotó") {
-      estado = "explotó";
+    tiempoRestante = tiempo - int((millis() - tiempoInicio) / 1000);
+    if (tiempoRestante <= 0) {
+      estado = "exploto";
       setTimeout(reiniciarBomba, 3000);
     }
-  } else if (estado === "inactiva") {
-    mostrarTiempo(tiempo);
-    mostrarTexto("Listo");
-  } else if (estado === "explotó") {
-    mostrarTexto("¡BOOM!");
+  }
+}
+
+function manejarEvento(e) {
+  if (estado === "inactiva") {
+    if (e === "A") tiempo = min(tiempo + 1, 60);
+    if (e === "B") tiempo = max(tiempo - 1, 10);
+    if (e === "S") activarBomba();
+  }
+
+  // Detectar secuencia para desactivar la bomba
+  secuencia.push(e);
+  if (secuencia.length > secuenciaCorrecta.length) {
+    secuencia.shift();
+  }
+
+  if (JSON.stringify(secuencia) === JSON.stringify(secuenciaCorrecta)) {
+    reiniciarBomba();
+    secuencia = [];
+    console.log("Bomba desactivada por clave secreta!");
   }
 }
 
 function activarBomba() {
-  if (estado === "inactiva") {
-    inicio = millis();
-    estado = "activa";
-  }
+  estado = "activa";
+  tiempoInicio = millis();
 }
 
 function reiniciarBomba() {
   estado = "inactiva";
   tiempo = 20;
+  secuencia = [];
 }
 
 function dibujarBomba() {
-  fill(100);
-  ellipse(width / 2, height / 2 - 20, 120, 120);
-  stroke(255);
-  line(width / 2, height / 2 - 80, width / 2, height / 2 - 50);
-  noStroke();
-  fill(255, 100, 0);
-  ellipse(width / 2, height / 2 - 90, 20, 20);
+  fill(255);
+  if (estado === "inactiva") {
+    text("⏱ " + tiempo + "s", width / 2, height / 2);
+  } else if (estado === "activa") {
+    text("💣 " + tiempoRestante + "s", width / 2, height / 2);
+  } else if (estado === "exploto") {
+    text("💥 BOOM 💥", width / 2, height / 2);
+  }
 }
 
-function mostrarTiempo(t) {
-  fill(255);
-  textSize(40);
-  text(t, width / 2, height / 2 + 50);
-}
-
-function mostrarTexto(msg) {
-  fill(255);
-  textSize(24);
-  text(msg, width / 2, height / 2 + 90);
-}
 ```
