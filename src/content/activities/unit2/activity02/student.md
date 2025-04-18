@@ -1,4 +1,4 @@
-Meta SMART para la Unidad 2 (Versión Intermedia):
+Meta SMART para la Unidad 2:
 
 Mi objetivo principal para esta unidad es aplicar de manera práctica los conceptos de microcontroladores, 
 programación en Micropython y Máquinas de Estado Finitas (FSM) a través del desarrollo del proyecto final propuesto.
