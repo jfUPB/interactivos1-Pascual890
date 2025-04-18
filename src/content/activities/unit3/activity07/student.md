@@ -1,3 +1,6 @@
+Codigo bomba en p5js
+
+``` js
 let tiempo = 20;
 let estado = "inactiva";
 let inicio;
@@ -82,3 +85,4 @@ function mostrarTexto(msg) {
   textSize(24);
   text(msg, width / 2, height / 2 + 90);
 }
+```
