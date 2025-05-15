@@ -28,5 +28,4 @@ Seguir la guia exactamente. Estaba bien estructurada y solo con leer detenidamen
 
 ### ¿Qué aspecto te resultó más desafiante?
 
-Entender el código. Como vengo de 3 semestres afuera de la carrera fue bastante lo que se me olvidó, ademas que ya era mas bien malo antes.
-Fue bastante desafiante pero fue mas bien de paciencia y de leer, finalmente hay muchas fuentes em inter y herramientas de IA.
+Aplicar el conocimiento practicado para realizar otro programa distinto. Fue complicado porque no estoy muy rápido para el código, pero el caso de estudio estaba bien separado y explicado en la unidad. Al final se logró el objetivo pensado usando herramientas de internet para saber que cosas editar y teniendo paciencia.
