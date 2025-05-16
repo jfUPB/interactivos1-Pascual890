@@ -1,0 +1,11 @@
+## Actividad 2
+### Enunciado: 
+imagina un proyecto de entretenimiento digital que te gustaría desarrollar en el futuro. Describe brevemente el proyecto y luego enfócate en cómo podrías integrar sistemas físicos interactivos para mejorarlo. ¿Qué tipo de dispositivos de entrada/salida utilizarías? ¿Qué tipo de interacción con el mundo físico te gustaría lograr? ¿Qué problemas crees que podrías encontrar al implementar estos sistemas? Conecta tu visión con la descripción del curso y los conceptos que se mencionan.
+
+Una idea de un proyecto con sistemas físicos interactivos sería un tipo de arena grande para varios jugadores con uso de gafas de realidad virtual o aumentada. El propósito de la arena sería tener un espacio para realizar diferentes juegos sea en equipos o todos contra todos(ej: un shooter básico, en los que puedan movilizarse por el mundo real mientras ven un universo diferentes por medio de las gafas VR. Para el proyecto se deberían usar distintos tipos de entradas y salidas.
+Entradas: Controles para cada mano para leer el movimiento de los usuarios. Dispositivos que lean la ubicación del jugador en el espacio, sea dentro de las gafas o en la arena.
+Salidas: Cascos de audio espacial. Pantalla de los cascos VR. 
+
+El punto de estos sistemas y dispositivos sería crear un espacio interactivo inmersivo para los jugadores, creando la posibilidad de hacer gran variedad de juegos y universos de todo tipo de temáticas solo con el uso de un mismo espacio físico. Al momento de realizar el proyecto podrían surgir diversos problemas. El primer problema podría ser el peso de los cascos VR y de los mandos, ya que podría hacer que los juegos sean incomodos de jugar o limitando la velocidad y fluidez con que se puede usar todo el espacio. Otro problema podría ser la lectura de la ubicación de los usuarios, ya que de no ser perfecta generaría problemas en el juego. Los cables y conexiones podrían presentar un problema, ya que esta la posibilidad de romperse o enrredarse en medio del juego debido a que los jugadores no estarán viéndolos con el headset VR. El proyecto podría ser viable, pero se hace esencial realizar un estudio de los sistemas interactivos que se deben usar y la forma de implementarlos para valorar la viabilidad del proyecto y si es posible por los costos.
+
+
